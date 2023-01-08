@@ -1,0 +1,249 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="commerce.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <nav id="nav">
+            <div id="con2"><a href=""></a>*AWG Search</div>
+            
+            <select onchange="tooi()" name="" id="ewey">
+                <option value="">select a category</option>
+                <option value="smartphones">smartphones</option>
+                <option value="fragrances">fragrances</option>
+                <option value="skincare">skincare</option>
+                <option value="groceries">groceries</option>
+                <option value="home-decoration">home-decoration</option>
+                <option value="furniture">furniture</option>
+                <option value="tops">tops</option>
+                <option value="womens-dresses">womens-dresses</option>
+                <option value="womens-shoes">womens-shoes</option>
+                <option value="laptops">laptops</option>
+                <option value="mens-shirts">mens-shirts</option>
+                <option value="mens-shoes">mens-shoes</option>
+                <option value="mens-watches">mens-watches</option>
+                <option value="womens-watches">womens-watches</option>
+                <option value="womens-bags">womens-bags</option>
+                <option value="womens-jewellery">womens-jewellery</option>
+                <option value="sunglasses">sunglasses</option>
+                <option value="automotive">automotive</option>
+                <option value="motorcycle">motorcycle</option>
+                <option value="lighting">lighting</option>
+            </select>
+            
+           <input id="con3" type="text" name="">
+            <div id="con4"><a href="#" onclick="get()"><i class="fa-solid fa-magnifying-glass"></i></a></div>
+            <ul id="con5">
+                <li><a class="diff" href="../index.html">HOME</a></li>
+                <li><a href=""><i class="fa-regular fa-user low"></i>Acount</a></li>
+                <li><a href=""><i class="fa-sharp fa-solid fa-question low"></i>Help</a></li>
+                <li><a href=""><i class="fa-solid fa-cart-shopping low"></i>Cart</a></li>
+            </ul>
+        </nav>
+    
+        <section id="sec">
+            <div id="total">
+    
+        
+        
+                  <div id="div2"  ></div>
+        
+        
+               
+            </div>
+            
+          </section>
+          <h3 id="err"></h3>
+          <script>
+             function tooi(){
+            document.getElementById('con3').value = document.getElementById('ewey').value
+            console.log(document.getElementById('ewey').value) 
+        }
+        
+     
+        function ok(){
+        
+            document.getElementById('con3').value = document.getElementById('p1').innerHTML
+            
+        }
+
+        function ok1(){
+        
+        document.getElementById('con3').value = document.getElementById('p2').innerHTML
+        
+    }
+
+    function ok2(){
+        
+        document.getElementById('con3').value = document.getElementById('p3').innerHTML
+        
+    }
+
+    function ok3(){
+        
+        document.getElementById('con3').value = document.getElementById('p4').innerHTML
+        
+    }
+
+    function ok4(){
+        
+        document.getElementById('con3').value = document.getElementById('p5').innerHTML
+        
+    }
+
+    function ok5(){
+        
+        document.getElementById('con3').value = document.getElementById('p6').innerHTML
+        
+    }
+
+    function ok6(){
+        
+        document.getElementById('con3').value = document.getElementById('p7').innerHTML
+        
+    }
+
+    function ok7(){
+        
+        document.getElementById('con3').value = document.getElementById('p8').innerHTML
+        
+    }
+
+    function ok8(){
+        
+        document.getElementById('con3').value = document.getElementById('p9').innerHTML
+        
+    }
+
+    function ok9(){
+        
+        document.getElementById('con3').value = document.getElementById('p10').innerHTML
+        
+    }
+
+    function ok10(){
+        
+        document.getElementById('con3').value = document.getElementById('p11').innerHTML
+        
+    }
+
+    function ok11(){
+        
+        document.getElementById('con3').value = document.getElementById('p12').innerHTML
+        
+    }
+
+    function ok12(){
+        
+        document.getElementById('con3').value = document.getElementById('13').innerHTML
+        
+    }
+
+    function ok13(){
+        
+        document.getElementById('con3').value = document.getElementById('p14').innerHTML
+        
+    }
+
+    function ok14(){
+        
+        document.getElementById('con3').value = document.getElementById('p15').innerHTML
+        
+    }
+
+    function ok15(){
+        
+        document.getElementById('con3').value = document.getElementById('p16').innerHTML
+        
+    }
+
+    function ok16(){
+        
+        document.getElementById('con3').value = document.getElementById('p17').innerHTML
+        
+    }
+
+    function ok17(){
+        
+        document.getElementById('con3').value = document.getElementById('p18').innerHTML
+        
+    }
+
+    function ok18(){
+        
+        document.getElementById('con3').value = document.getElementById('p19').innerHTML
+        
+    }
+
+    function ok19(){
+        
+        document.getElementById('con3').value = document.getElementById('p20').innerHTML
+        
+    }
+
+    
+    
+    // else if(document.getElementById('con3').value == ""){
+    //     document.getElementById('div2').style.display = "none"
+    // }
+    document.getElementById('err').innerHTML = " "
+         async function get(){
+            let input = document.getElementById('con3').value
+            console.log(input)
+    let results = await fetch('https://dummyjson.com/products/category/'+ `${input}`);
+    let data = await results.json() 
+    document.getElementById('err').innerHTML = ""
+    if(data.limit = "0"){
+        console.log('okay')
+        document.getElementById('err').innerHTML = "oops, we do not have this product. Try searching for another product."
+    }
+    // else{
+    //     document.getElementById('err').innerHTML = " "
+    // }
+   
+    console.log(data)
+    console.log(data.products[0].images[0])
+        console.log(data.products[0].description)
+
+                    let empty = " "
+    let currency = " $"
+    let percent = "%" + " " + "off, "
+    let value = ""
+    console.log(value)
+        let cont = document.getElementById("div2")
+        cont.innerHTML = ""
+        console.log(data.products[0].description)
+        for (let i=0; i<data.products.length; i++) {
+            let value =
+
+                    `<div class="container">
+                <h3 id="title1">${data.products[i].title}</h3>
+                <div id= "img">
+                    <img id="img1" class="img" src="${data.products[i].thumbnail}">
+                </div>
+    
+                <div id="mm">
+                    <span>Discount:<span id="dis1">${empty}${data.products[i].discountPercentage}${percent}</span></span>
+                    <span>Price: <span id="pr1">${currency}${empty} ${data.products[i].price}</span></span>
+                    <p>Rating: <span id="r1">${empty} ${data.products[i].rating}</span></p>
+                    <p>Description</br><span class= "words" id="des1" >${data.products[i].description}</span></p>
+                </div>
+            </div>`
+            document.getElementById('err').innerHTML = " "
+            cont.innerHTML += value
+            console.log(value)
+            
+        }
+        
+
+
+    }
+          </script>
+</body>
+</html>
